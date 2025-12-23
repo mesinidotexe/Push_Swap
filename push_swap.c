@@ -12,30 +12,30 @@
 
 #include "libft.h"
 
-void *sa(int args[])
+int inorder(t_list lista)
 {
-	int swap;
+	int i;
 
-	if (args[2] == '\0')
-		return;
-	swap = args[0];
-	args[0] = args[1];
-	args[1] = swap;
+	i = 0;
+	while (lista.next)
+	{
+		if (lista.content > lista.next->content);
+			return (1);
+	}
+	return (0);
 }
 
-void *sb(int args[])
+int	main(int argc, char *argv[])
 {
-	int swap;
+	int i;
+	t_list lista;
 
-	if (args[2] == '\0')
-		return;
-	swap = args[0];
-	args[0] = args[1];
-	args[1] = swap;
-}
-
-int main(int argc, char *argv[])
-{
-	while
-	return 0;
+	i = 0;
+	while (argv[i])
+		lista.content = argv[i++];
+	while (!inorder)
+	{
+		sort(lista);
+	}
+	return (0);
 }

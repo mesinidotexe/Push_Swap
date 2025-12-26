@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int inorder(t_list lista)
+int inorder(t_list Lista)
 {
-	int i;
+	int i
 
 	i = 0;
-	while (lista.next)
+	while (Lista.next)
 	{
-		if (lista.content > lista.next->content);
+		if (Lista.content > Lista.next->content);
 			return (1);
 	}
 	return (0);
@@ -28,14 +28,14 @@ int inorder(t_list lista)
 int	main(int argc, char *argv[])
 {
 	int i;
-	t_list lista;
+	t_list Lista;
 
 	i = 0;
 	while (argv[i])
-		lista.content = argv[i++];
+		Lista.content = argv[i++];
 	while (!inorder)
 	{
-		sort(lista);
+		sort(Lista);
 	}
 	return (0);
 }

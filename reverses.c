@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   reverses.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmesini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 20:14:47 by vmesini-          #+#    #+#             */
-/*   Updated: 2025/12/23 20:15:02 by vmesini-         ###   ########.fr       */
+/*   Created: 2025/12/30 18:13:53 by vmesini-          #+#    #+#             */
+/*   Updated: 2025/12/30 18:13:54 by vmesini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort(t_list *Lista)
+void	rra(t_list *Lista)
 {
-}
+	t_list *value_last_node;
+	t_list **ptr_first_node;
 
-void	del(void *content)
-{
-	free(content);
-}
-
-void error(void)
-{
-	write(2, "Error\n", 6);
+	ptr_first_node = Lista;
+	value_last_node = ft_lstlast(&Lista);
+	Lista = &ptr_first_node;
+	while (Lista)
+	{
+		*value_last_node = *Lista;
+		Lista = Lista->next;
+	}
+	write (1,"rra\n", 4);
 }

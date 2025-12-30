@@ -17,4 +17,8 @@
 # include <stdarg.h>
 # include <unistd.h>
 
+void	del(void *content);
+void	error(void);
+void	sort(t_list *Lista);
+
 #endif

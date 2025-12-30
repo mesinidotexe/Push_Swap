@@ -12,6 +12,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <limits.h>
 # include <stdarg.h>
 # include <stddef.h>
 # include <stdio.h>
@@ -65,6 +66,7 @@ void				ft_bzero(void *s, size_t n);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_atoi(const char *str);
+long				ft_atol(char *str);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);

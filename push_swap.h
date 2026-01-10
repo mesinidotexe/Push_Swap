@@ -16,9 +16,17 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct s_stack
+{
+	int			number;
+	struct s_stack	*next;
+}					t_stack;
 
 void	del(void *content);
 void	error(void);
-void	sort(t_list *Lista);
+void	sort(t_stack *Lista);
 
 #endif

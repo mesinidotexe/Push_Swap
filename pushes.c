@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	pa(t_list *ListaA, t_list *ListaB)
+void	pa(t_stack *ListaA, t_stack *ListaB)
 {
 	if (ListaB->content == NULL)
 		return ;
@@ -20,7 +20,7 @@ void	pa(t_list *ListaA, t_list *ListaB)
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_list *ListaB, t_list *ListaA)
+void	pb(t_stack *ListaB, t_stack *ListaA)
 {
 	if (ListaA->content == NULL)
 		return ;

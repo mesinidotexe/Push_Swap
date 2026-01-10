@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	rra(t_list *Lista)
+void	rra(t_stack *Lista)
 {
-	t_list *value_last_node;
-	t_list **ptr_first_node;
+	t_stack *value_last_node;
+	t_stack **ptr_first_node;
 
 	ptr_first_node = Lista;
 	value_last_node = ft_lstlast(&Lista);

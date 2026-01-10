@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ra(t_list *Lista)
+void	ra(t_stack *Lista)
 {
 	int	temp;
 
@@ -26,7 +26,7 @@ void	ra(t_list *Lista)
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_list *Lista)
+void	rb(t_stack *Lista)
 {
 	int	temp;
 
@@ -40,7 +40,7 @@ void	rb(t_list *Lista)
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_list *ListaA, t_list *ListaB)
+void	rr(t_stack *ListaA, t_stack *ListaB)
 {
 	int	tempa;
 	int	tempb;

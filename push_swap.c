@@ -14,9 +14,8 @@
 
 int	inorder(t_list *Lista)
 {
-	int	i;
-
-	i = 0;
+	if (!Lista)
+		error();
 	while (Lista->next)
 	{
 		if (Lista->content > Lista->next->content)
@@ -25,29 +24,18 @@ int	inorder(t_list *Lista)
 	}
 	return (0);
 }
-int	arg_to_list(int argc, char *argv[])
+int	arg_to_list(t_stack *a, t_stack *b, int argc, char *argv[])
 {
-	int		i;
-	t_list	*lista;
-	t_list	*new_node;
-
-	lista = NULL;
-	i = 1;
-	while (i < argc)
+	while (argc > 1)
 	{
-		new_node = ft_lstnew(ft_atol(argv[i]));
-		if (!new_node)
+		a = ft_lstnew((*void)*ft_atol(argv[argc]));
+		if (!a)
 		{
-			ft_lstclear(&lista, del);
+			ft_lstclear(a, del);
 			error();
-			return (1);
 		}
-		ft_lstadd_back(&lista, new_node);
-		i++;
-	}
-	while (!inorder(lista))
-	{
-		sort(&lista);
+		ft_lstadd_back(a, b);
+		argc--;
 	}
 	return (0);
 }
@@ -58,7 +46,7 @@ int	checker(int argc, char *argv[])
 	long	max_min;
 
 	i = 0;
-	max_min = ft_atol(argv);
+	max_min = ft_atol(argv[i]);
 	if (max_min < INT_MIN || max_min > INT_MAX)
 		return (1);
 	while (argv[i])
@@ -72,9 +60,18 @@ int	checker(int argc, char *argv[])
 
 int	main(int argc, char *argv[])
 {
+	t_stack *a;
+	t_stack *b;
+	
+	a = NULL;
+	b = NULL;
 	if (!checker(argc, argv))
-		return (error);
-	if (arg_to_list(argc, argv))
-		return (error);
+		error();
+	if (!arg_to_list(a, b, argc, argv))
+		error();
+	while (!inorder(a))
+	{
+		sort(a);
+	}
 	return (0);
 }

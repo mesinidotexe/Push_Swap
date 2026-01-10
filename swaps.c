@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sa(t_list *Lista)
+void	sa(t_stack *Lista)
 {
 	int	swap;
 
@@ -24,7 +24,7 @@ void	sa(t_list *Lista)
 	write(1, "sa\n", 3);
 }
 
-void	sb(t_list *Lista)
+void	sb(t_stack *Lista)
 {
 	int	swap;
 
@@ -36,7 +36,7 @@ void	sb(t_list *Lista)
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_list *ListaA, t_list *ListaB)
+void	ss(t_stack *ListaA, t_stack *ListaB)
 {
 	int	swapa;
 	int	swapb;

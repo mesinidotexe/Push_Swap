@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sort(t_list *Lista)
+void	sort(t_stack *Lista)
 {
 }
 
@@ -24,4 +24,5 @@ void	del(void *content)
 void error(void)
 {
 	write(2, "Error\n", 6);
+	exit(1);
 }

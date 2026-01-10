@@ -18,6 +18,7 @@
 # include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 typedef struct s_stack
 {
@@ -25,6 +26,11 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+
+int	check_data(int argc, char *argv[]);
+int has_duplicates(int argc, char **argv);
+int overflow(int argc, char *argv[]);
+int args_are_int(int argc, char *argv[]);
 void	del(void *content);
 void	error(void);
 void	sort(t_stack *Lista);

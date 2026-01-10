@@ -1,8 +1,13 @@
-NAME = push_swap.a
+NAME = push_swap
 
 SRCS = push_swap.c\
-		commands.c\
-		commands2.c\
+		data_order.c\
+		data_validation.c\
+		pushes.c\
+		reverses.c\
+		rotates.c\
+		swaps.c\
+		utils.c\
 		
 OBJ = $(SRCS:.c=.o)
 

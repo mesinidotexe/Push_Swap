@@ -1,40 +1,48 @@
 NAME = push_swap
 
-SRCS = push_swap.c\
-		data_order.c\
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -I/libft -g
+
+SRCS_DIR = .
+
+SRC_FILES = data_order.c\
 		data_validation.c\
+		lst_function_2.c\
+		lst_function.c\
+		push_swap.c\
 		pushes.c\
 		reverses.c\
 		rotates.c\
 		swaps.c\
-		utils.c\
-		
-OBJ = $(SRCS:.c=.o)
+		utils.c
 
-CC = cc
+SRCS = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
 
-CFLAGS = -Wall -Werror -Wextra
+OBJS = $(SRCS:.c=.o)
+
+LIBFT_DIR = ./libft
+LIBFT_A   = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
 
-$(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJS) $(LIBFT_A)
+	-$(CC) $(OBJS) $(LIBFT_A) $(CFLAGS) -o $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-EXEC = test
-
-$(EXEC): $(NAME) main.c
-	$(CC) $(CFLAGS) main.c $(NAME) -o $(EXEC)
-
+$(LIBFT_A):
+	-$(MAKE) -C $(LIBFT_DIR)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS)
+	-$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
+	-$(MAKE) clean
+	-$(MAKE) -C $(LIBFT_DIR) fclean
+
 
 re: fclean all
+	-$(MAKE)
+	-$(MAKE) -C $(LIBFT_DIR) re
 
-.PHONY: clean fclean all re
+.PHONY: all clean fclean re

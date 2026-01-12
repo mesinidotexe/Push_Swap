@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   data_validation.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vmesini- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/12 19:03:06 by vmesini-          #+#    #+#             */
+/*   Updated: 2026/01/12 19:03:08 by vmesini-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-int args_are_int(int argc, char *argv[])
+int	args_are_int(int argc, char *argv[])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc)
@@ -25,10 +36,10 @@ int args_are_int(int argc, char *argv[])
 	return (0);
 }
 
-int overflow(int argc,char *argv[])
+int	overflow(int argc, char *argv[])
 {
 	long	max_min;
-	int i;
+	int		i;
 
 	i = 1;
 	while (i < argc)
@@ -68,10 +79,10 @@ int	has_duplicates(int argc, char **argv)
 int	check_data(int argc, char *argv[])
 {
 	if (!args_are_int(argc, argv))
-		error();
+		return (1);
 	if (overflow(argc, argv))
-		error();
+		return (1);
 	if (has_duplicates(argc, argv))
-		error();
+		return (1);
 	return (0);
 }

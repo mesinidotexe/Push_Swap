@@ -15,7 +15,7 @@
 long	ft_atol(char *str)
 {
 	long	nbr;
-	int	neg;
+	int		neg;
 
 	nbr = 0;
 	neg = 0;
@@ -33,7 +33,7 @@ long	ft_atol(char *str)
 		str++;
 	}
 	if (nbr < INT_MIN || nbr > INT_MAX)
-		error();
+		exit(1);
 	if (neg % 2 != 0)
 		nbr = -nbr;
 	return (nbr);

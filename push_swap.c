@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "work_with_data.c"
 #include "push_swap.h"
 
 int	main(int argc, char *argv[])
@@ -29,7 +28,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	while (!inorder(a))
 	{
-		sort(a);
+		sort(a, b);
 	}
 	return (0);
 }

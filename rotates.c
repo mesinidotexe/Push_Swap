@@ -14,50 +14,50 @@
 
 void	ra(t_stack *Lista)
 {
-	int	temp;
+	int	*temp;
 
-	temp = Lista->content;
+	temp = Lista->number;
 	while (Lista->next)
 	{
-		Lista->content = Lista->next->content;
+		Lista->number = Lista->next->number;
 		Lista = Lista->next;
 	}
-	Lista->content = temp;
+	Lista->number = temp;
 	write(1, "ra\n", 3);
 }
 
 void	rb(t_stack *Lista)
 {
-	int	temp;
+	int	*temp;
 
-	temp = Lista->content;
+	temp = Lista->number;
 	while (Lista->next)
 	{
-		Lista->content = Lista->next->content;
+		Lista->number = Lista->next->number;
 		Lista = Lista->next;
 	}
-	Lista->content = temp;
+	Lista->number = temp;
 	write(1, "rb\n", 3);
 }
 
 void	rr(t_stack *ListaA, t_stack *ListaB)
 {
-	int	tempa;
-	int	tempb;
+	int	*tempa;
+	int	*tempb;
 
-	tempa = ListaA->content;
+	tempa = ListaA->number;
 	while (ListaA->next)
 	{
-		ListaA->content = ListaA->next->content;
+		ListaA->number = ListaA->next->number;
 		ListaA = ListaA->next;
 	}
-	ListaA->content = tempa;
-	tempb = ListaB->content;
+	ListaA->number = tempa;
+	tempb = ListaB->number;
 	while (ListaB->next)
 	{
-		ListaB->content = ListaB->next->content;
+		ListaB->number = ListaB->next->number;
 		ListaB = ListaB->next;
 	}
-	ListaB->content = tempb;
+	ListaB->number = tempb;
 	write(1, "rr\n", 3);
 }

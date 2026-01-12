@@ -7,25 +7,25 @@ int	inorder(t_stack *Lista) // to separate file Ordering....
     while (Lista->next)
     {
         if (Lista->number > Lista->next->number)
-            return (1);
+            error();
         Lista = Lista->next;
     }
     return (0);
 }
 
-t_stack	arg_to_stack(t_stack *a, int argc, char *argv[]) // to separate file 1
+t_stack	*arg_to_stack(t_stack *a, int argc, char *argv[])
 {
     t_stack *new_node;
 
 	while (argc < 1)
 	{
-		new_node = ft_lstnew((void*) (long)ft_atol(argv[argc]));
+		new_node = ps_lstnew(ft_atoi(argv[argc]));
 		if (!new_node)
 		{
-			ft_lstclear(&new_node, del);
+			ps_lstclear(&new_node, del);
 			error();
 		}
-		ft_lstadd_back(&a, new_node);
+		ps_lstadd_back(&a, new_node);
 		argc--;
 	}
 	return (a);

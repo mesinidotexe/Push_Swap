@@ -14,42 +14,42 @@
 
 void	sa(t_stack *Lista)
 {
-	int	swap;
+	int	*swap;
 
-	if (Lista->content == NULL || Lista->next->content == NULL)
+	if (Lista->number == NULL || Lista->next->number == NULL)
 		return ;
-	swap = Lista->content;
-	Lista->content = Lista->next->content;
-	Lista->next->content = swap;
+	swap = Lista->number;
+	Lista->number = Lista->next->number;
+	Lista->next->number = swap;
 	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *Lista)
 {
-	int	swap;
+	int	*swap;
 
-	if (Lista->content == NULL || Lista->next->content == NULL)
+	if (Lista->number == NULL || Lista->next->number == NULL)
 		return ;
-	swap = Lista->content;
-	Lista->content = Lista->next->content;
-	Lista->next->content = swap;
+	swap = Lista->number;
+	Lista->number = Lista->next->number;
+	Lista->next->number = swap;
 	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack *ListaA, t_stack *ListaB)
 {
-	int	swapa;
-	int	swapb;
+	int	*swapa;
+	int	*swapb;
 
-	if (ListaA->content == NULL || ListaA->next->content == NULL)
+	if (ListaA->number == NULL || ListaA->next->number == NULL)
 		return ;
-	if (ListaB->content == NULL || ListaB->next->content == NULL)
+	if (ListaB->number == NULL || ListaB->next->number == NULL)
 		return ;
-	swapa = ListaA->content;
-	ListaA->content = ListaA->next->content;
-	ListaA->next->content = swapa;
-	swapb = ListaB->content;
-	ListaB->content = ListaB->next->content;
-	ListaB->next->content = swapb;
+	swapa = ListaA->number;
+	ListaA->number = ListaA->next->number;
+	ListaA->next->number = swapa;
+	swapb = ListaB->number;
+	ListaB->number = ListaB->next->number;
+	ListaB->next->number = swapb;
 	write(1, "ss\n", 3);
 }

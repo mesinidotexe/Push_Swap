@@ -22,17 +22,28 @@
 
 typedef struct s_stack
 {
-	int			number;
+	int			*number;
 	struct s_stack	*next;
 }					t_stack;
 
-
+int	inorder(t_stack *Lista);
+t_stack	*arg_to_stack(t_stack *a, int argc, char *argv[]);
 int	check_data(int argc, char *argv[]);
 int has_duplicates(int argc, char **argv);
 int overflow(int argc, char *argv[]);
 int args_are_int(int argc, char *argv[]);
+
+//Utils
 void	del(void *content);
 void	error(void);
-void	sort(t_stack *Lista);
+void	sort(t_stack *a, t_stack *b);
+
+//Lists
+t_stack	*ps_lstnew(int content);
+void	ps_lstclear(t_stack **lst, void (*del)(void *));
+void	ps_lstadd_back(t_stack **lst, t_stack *new);
+void	ps_lstadd_front(t_stack **lst, t_stack *new);
+t_stack	*ps_lstlast(t_stack *lst);
+
 
 #endif

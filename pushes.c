@@ -14,16 +14,16 @@
 
 void	pa(t_stack *ListaA, t_stack *ListaB)
 {
-	if (ListaB->content == NULL)
+	if (ListaB->number == NULL)
 		return ;
-	ft_lstadd_front(&ListaA, ListaB->content);
+	ps_lstadd_front(&ListaA, ListaB);
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *ListaB, t_stack *ListaA)
 {
-	if (ListaA->content == NULL)
+	if (ListaA->number == NULL)
 		return ;
-	ft_lstadd_front(&ListaB, ListaA->content);
+	ps_lstadd_front(&ListaB, ListaA);
 	write(1, "pb\n", 3);
 }

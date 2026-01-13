@@ -16,6 +16,7 @@
 # include "libft/libft.h"
 # include <limits.h>
 # include <stdarg.h>
+# include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,8 +27,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-int					inorder(t_stack *Lista);
-t_stack				*arg_to_stack(t_stack *a, int argc, char *argv[]);
+// Data validation
 int					check_data(int argc, char *argv[]);
 int					has_duplicates(int argc, char **argv);
 int					overflow(int argc, char *argv[]);
@@ -37,7 +37,11 @@ int					args_are_int(int argc, char *argv[]);
 void				error(void);
 // void				sort(t_stack *a, t_stack *b);
 
-// Lists
+// Data Order
+int					inorder(t_stack *Lista);
+t_stack				*arg_to_stack(t_stack *a, int argc, char *argv[]);
+
+// Lists/Stack
 void				ps_print_stack(t_stack *a);
 void				free_list(t_stack *a, t_stack *b);
 t_stack				*ps_lstnew(int content);

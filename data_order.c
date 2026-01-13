@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdbool.h>
 
 int	inorder(t_stack *lista)
 {
@@ -29,8 +28,9 @@ int	inorder(t_stack *lista)
 t_stack	*arg_to_stack(t_stack *a, int argc, char *argv[])
 {
 	t_stack	*new_node;
-	int i = 1;
+	int		i;
 
+	i = 1;
 	while (i < argc)
 	{
 		new_node = ps_lstnew(ft_atoi(argv[i]));

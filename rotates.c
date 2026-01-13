@@ -12,52 +12,52 @@
 
 #include "push_swap.h"
 
-void	ra(t_stack *Lista)
+void	ra(t_stack *lista)
 {
-	int	*temp;
+	int	temp;
 
-	temp = Lista->number;
-	while (Lista->next)
+	temp = lista->number;
+	while (lista->next)
 	{
-		Lista->number = Lista->next->number;
-		Lista = Lista->next;
+		lista->number = lista->next->number;
+		lista = lista->next;
 	}
-	Lista->number = temp;
+	lista->number = temp;
 	write(1, "ra\n", 3);
 }
 
-void	rb(t_stack *Lista)
+void	rb(t_stack *lista)
 {
-	int	*temp;
+	int	temp;
 
-	temp = Lista->number;
-	while (Lista->next)
+	temp = lista->number;
+	while (lista->next)
 	{
-		Lista->number = Lista->next->number;
-		Lista = Lista->next;
+		lista->number = lista->next->number;
+		lista = lista->next;
 	}
-	Lista->number = temp;
+	lista->number = temp;
 	write(1, "rb\n", 3);
 }
 
-void	rr(t_stack *ListaA, t_stack *ListaB)
+void	rr(t_stack *listaA, t_stack *listaB)
 {
-	int	*tempa;
-	int	*tempb;
+	int	tempa;
+	int	tempb;
 
-	tempa = ListaA->number;
-	while (ListaA->next)
+	tempa = listaA->number;
+	while (listaA->next)
 	{
-		ListaA->number = ListaA->next->number;
-		ListaA = ListaA->next;
+		listaA->number = listaA->next->number;
+		listaA = listaA->next;
 	}
-	ListaA->number = tempa;
-	tempb = ListaB->number;
-	while (ListaB->next)
+	listaA->number = tempa;
+	tempb = listaB->number;
+	while (listaB->next)
 	{
-		ListaB->number = ListaB->next->number;
-		ListaB = ListaB->next;
+		listaB->number = listaB->next->number;
+		listaB = listaB->next;
 	}
-	ListaB->number = tempb;
+	listaB->number = tempb;
 	write(1, "rr\n", 3);
 }

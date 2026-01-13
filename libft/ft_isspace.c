@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushes.c                                           :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmesini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/30 18:11:33 by vmesini-          #+#    #+#             */
-/*   Updated: 2025/12/30 18:11:36 by vmesini-         ###   ########.fr       */
+/*   Created: 2026/01/13 16:19:00 by vmesini-          #+#    #+#             */
+/*   Updated: 2026/01/13 16:19:01 by vmesini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	pa(t_stack *listaA, t_stack *listaB)
+int ft_isspace(int c)
 {
-	if (!listaB)
-		return ;
-	ps_lstadd_front(&listaA, listaB);
-	write(1, "pa\n", 3);
-}
+	int i;
 
-void	pb(t_stack *listaB, t_stack *listaA)
-{
-	if (!listaA)
-		return ;
-	ps_lstadd_front(&listaB, listaA);
-	write(1, "pb\n", 3);
+	i = 0;
+	if (c >= 9 && c <= 13)
+		return (1);
+	return (0);
+	
 }

@@ -29,15 +29,12 @@ int	main(int argc, char *argv[])
 	a = arg_to_stack(a, argc, argv);
 	if (!a)
 		error();
-	ps_print_stack(a); //debugging tool
+	ps_print_stack(a); // debugging tool
 	if (inorder(a))
 	{
 		free_list(a, b);
-		return(0);
+		return (0);
 	}
 	free_list(a, b);
 	return (0);
-	
 }
-
-

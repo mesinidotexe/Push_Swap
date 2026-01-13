@@ -19,11 +19,19 @@ void	ps_lstdelone(t_stack *lst)
 	free(lst);
 }
 
-// void	ps_print_stack(t_stack *a)
-// {
-// 	while (a)
-// 	{
-// 		ft_printf("%d\n", a->number);
-// 		a = a->next;
-// 	}
-// }
+void	free_list(t_stack *a, t_stack *b)
+{
+	if (a)
+		ps_lstclear(&a);
+	if (b)
+		ps_lstclear(&b);
+}
+
+void	ps_print_stack(t_stack *a)
+{
+	while (a)
+	{
+		ft_printf("%d\n", a->number);
+		a = a->next;
+	}
+}

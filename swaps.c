@@ -12,44 +12,44 @@
 
 #include "push_swap.h"
 
-void	sa(t_stack *Lista)
+void	sa(t_stack *lista)
 {
-	int	*swap;
+	int	swap;
 
-	if (Lista->number == NULL || Lista->next->number == NULL)
+	if (!lista || !lista->next)
 		return ;
-	swap = Lista->number;
-	Lista->number = Lista->next->number;
-	Lista->next->number = swap;
+	swap = lista->number;
+	lista->number = lista->next->number;
+	lista->next->number = swap;
 	write(1, "sa\n", 3);
 }
 
-void	sb(t_stack *Lista)
+void	sb(t_stack *lista)
 {
-	int	*swap;
+	int	swap;
 
-	if (Lista->number == NULL || Lista->next->number == NULL)
+	if (!lista || !lista->next)
 		return ;
-	swap = Lista->number;
-	Lista->number = Lista->next->number;
-	Lista->next->number = swap;
+	swap = lista->number;
+	lista->number = lista->next->number;
+	lista->next->number = swap;
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack *ListaA, t_stack *ListaB)
+void	ss(t_stack *listaA, t_stack *listaB)
 {
-	int	*swapa;
-	int	*swapb;
+	int	swapa;
+	int	swapb;
 
-	if (ListaA->number == NULL || ListaA->next->number == NULL)
+	if (!listaA || !listaA->next)
 		return ;
-	if (ListaB->number == NULL || ListaB->next->number == NULL)
+	if (!listaB || !listaB->next)
 		return ;
-	swapa = ListaA->number;
-	ListaA->number = ListaA->next->number;
-	ListaA->next->number = swapa;
-	swapb = ListaB->number;
-	ListaB->number = ListaB->next->number;
-	ListaB->next->number = swapb;
+	swapa = listaA->number;
+	listaA->number = listaA->next->number;
+	listaA->next->number = swapa;
+	swapb = listaB->number;
+	listaB->number = listaB->next->number;
+	listaB->next->number = swapb;
 	write(1, "ss\n", 3);
 }

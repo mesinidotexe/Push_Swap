@@ -11,34 +11,36 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdbool.h>
 
-int	inorder(t_stack *Lista) // to separate file Ordering....
+int	inorder(t_stack *lista)
 {
-	if (!Lista)
-		return (1);
-	while (Lista->next)
+	if (!lista)
+		return (false);
+	while (lista->next)
 	{
-		if (Lista->number > Lista->next->number)
-			return (1);
-		Lista = Lista->next;
+		if (lista->number > lista->next->number)
+			return (false);
+		lista = lista->next;
 	}
-	return (0);
+	return (true);
 }
 
 t_stack	*arg_to_stack(t_stack *a, int argc, char *argv[])
 {
 	t_stack	*new_node;
+	int i = 1;
 
-	while (argc > 1)
+	while (i < argc)
 	{
-		new_node = ps_lstnew(ft_atoi(argv[argc - 1]));
+		new_node = ps_lstnew(ft_atoi(argv[i]));
 		if (!new_node)
 		{
-			ps_lstclear(&new_node, del);
+			ps_lstclear(&new_node);
 			error();
 		}
 		ps_lstadd_back(&a, new_node);
-		argc--;
+		i++;
 	}
 	return (a);
 }

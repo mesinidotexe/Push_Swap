@@ -34,16 +34,17 @@ int					overflow(int argc, char *argv[]);
 int					args_are_int(int argc, char *argv[]);
 
 // Utils
-void				del(int *number);
 void				error(void);
 // void				sort(t_stack *a, t_stack *b);
 
 // Lists
+void				ps_print_stack(t_stack *a);
+void				free_list(t_stack *a, t_stack *b);
 t_stack				*ps_lstnew(int content);
-void				ps_lstclear(t_stack **lst, void (*del)(int *));
+void				ps_lstclear(t_stack **lst);
 void				ps_lstadd_back(t_stack **lst, t_stack *new);
 void				ps_lstadd_front(t_stack **lst, t_stack *new);
 t_stack				*ps_lstlast(t_stack *lst);
-void				ps_lstdelone(t_stack *lst, void (*del)(int *));
+void				ps_lstdelone(t_stack *lst);
 
 #endif

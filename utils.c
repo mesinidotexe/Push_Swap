@@ -17,11 +17,6 @@
 	
 // }
 
-void	del(int *content)
-{
-	free(content);
-}
-
 void	error(void)
 {
 	write(2, "Error\n", 6);
@@ -32,11 +27,20 @@ void	free_list(t_stack *a, t_stack *b)
 {
 	if (a)
 	{
-		ps_lstclear(&a, del);
+		ps_lstclear(&a);
 	}
 	if (b)
 	{
-		ps_lstclear(&b, del);
+		ps_lstclear(&b);
 	}
 	
+}
+
+void	ps_print_stack(t_stack *a)
+{
+	while (a)
+	{
+		ft_printf("%d\n", a->number);
+		a = a->next;
+	}
 }

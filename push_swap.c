@@ -12,15 +12,6 @@
 
 #include "push_swap.h"
 
-void	ps_print_stack(t_stack *a)
-{
-	while (a)
-	{
-		ft_printf("%d\n", a->number);
-		a = a->next;
-	}
-}
-
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
@@ -35,20 +26,18 @@ int	main(int argc, char *argv[])
 	b = NULL;
 	if (!check_data(argc, argv))
 		error();
-	a = arg_to_stack(a, argc, argv); // it doesnt pass to a stack
+	a = arg_to_stack(a, argc, argv);
 	if (!a)
-	{
-		ft_printf("Aqui\n");
 		error();
-	}
-	ps_print_stack(a);
+	ps_print_stack(a); //debugging tool
 	if (inorder(a))
-		return (0);
-	// while (!inorder(a))
-	// {
-	// 	sort(a, b);
-	// }
-	// return (0);
+	{
+		free_list(a, b);
+		return(0);
+	}
+	free_list(a, b);
+	return (0);
+	
 }
 
 

@@ -24,19 +24,19 @@ t_stack	*ps_lstnew(int content)
 	return (nextnode);
 }
 
-void	ps_lstclear(t_stack **lst, void (*del)(int *))
+void	ps_lstclear(t_stack **lst)
 {
 	t_stack	*current;
 	t_stack	*tmp_next;
 
-	if (!lst || !del)
+	if (!lst)
 		return ;
 	current = *lst;
 	tmp_next = *lst;
 	while (current)
 	{
 		tmp_next = tmp_next->next;
-		ps_lstdelone(current, del);
+		ps_lstdelone(current);
 		current = tmp_next;
 		if (!current)
 			free(current);

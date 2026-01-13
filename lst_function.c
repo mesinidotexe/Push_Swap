@@ -19,7 +19,7 @@ t_stack	*ps_lstnew(int content)
 	nextnode = malloc(sizeof(struct s_stack));
 	if (!nextnode)
 		return (NULL);
-	nextnode->number = &content;
+	nextnode->number = content;
 	nextnode->next = NULL;
 	return (nextnode);
 }

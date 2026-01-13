@@ -22,7 +22,7 @@
 
 typedef struct s_stack
 {
-	int				*number;
+	int				number;
 	struct s_stack	*next;
 }					t_stack;
 

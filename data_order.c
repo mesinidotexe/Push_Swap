@@ -29,9 +29,9 @@ t_stack	*arg_to_stack(t_stack *a, int argc, char *argv[])
 {
 	t_stack	*new_node;
 
-	while (argc < 1)
+	while (argc > 1)
 	{
-		new_node = ps_lstnew(ft_atoi(argv[argc]));
+		new_node = ps_lstnew(ft_atoi(argv[argc - 1]));
 		if (!new_node)
 		{
 			ps_lstclear(&new_node, del);

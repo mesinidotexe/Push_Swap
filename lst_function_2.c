@@ -20,3 +20,12 @@ void	ps_lstdelone(t_stack *lst, void (*del)(int *))
 		del(lst->number);
 	free(lst);
 }
+
+// void	ps_print_stack(t_stack *a)
+// {
+// 	while (a)
+// 	{
+// 		ft_printf("%d\n", a->number);
+// 		a = a->next;
+// 	}
+// }

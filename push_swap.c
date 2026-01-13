@@ -12,6 +12,15 @@
 
 #include "push_swap.h"
 
+void	ps_print_stack(t_stack *a)
+{
+	while (a)
+	{
+		ft_printf("%d\n", a->number);
+		a = a->next;
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
@@ -32,6 +41,7 @@ int	main(int argc, char *argv[])
 		ft_printf("Aqui\n");
 		error();
 	}
+	ps_print_stack(a);
 	if (inorder(a))
 		return (0);
 	// while (!inorder(a))
@@ -40,3 +50,5 @@ int	main(int argc, char *argv[])
 	// }
 	// return (0);
 }
+
+

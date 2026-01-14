@@ -12,13 +12,12 @@
 
 #include "libft.h"
 
-int ft_isspace(int c)
+int	ft_isspace(int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (c >= 9 && c <= 13)
 		return (1);
 	return (0);
-	
 }

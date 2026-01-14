@@ -27,7 +27,7 @@ int	args_are_int(int argc, char *argv[])
 			return (1);
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]))
+			if (!ft_isdigit(argv[i][j]) && !ft_isspace(argv[i][j]))
 				return (1);
 			j++;
 		}

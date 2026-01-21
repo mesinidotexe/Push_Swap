@@ -48,7 +48,8 @@ SRCS = ft_isalpha.c\
 	ft_putnbr.c\
 	ft_putstr.c\
 	ft_atol.c\
-	ft_isspace.c
+	ft_isspace.c\
+	ft_free_array.c
 
 
 BONUS_SRCS = ft_lstnew.c\

@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static int	ft_count_word(char const *s, char c)
+int	ft_count_word(char const *s, char c)
 {
 	int			i;
-	static int	word;
+	int	word;
 
 	i = 0;
 	word = 0;
@@ -52,7 +52,7 @@ static char	*ft_write_words(const char *s, char c)
 	if (!arr)
 		return (NULL);
 	i = 0;
-	while (s[i] != c)
+	while (s[i] && s[i] != c)
 	{
 		arr[i] = s[i];
 		i++;
@@ -76,10 +76,10 @@ char	**ft_split(char const *s, char c)
 	while (i < ft_count_word(s, c))
 	{
 		while (s[j] == c && s[j] != '\0')
-		{
 			j++;
-		}
 		array[i] = ft_write_words(s + j, c);
+		if (!array[i])
+			return(free_array(array), NULL);
 		j = j + ft_str_char_len(&s[j], c);
 		i++;
 	}
@@ -102,3 +102,4 @@ char	**ft_split(char const *s, char c)
 	printf("%s\n", arrays[i]);
 	return (0);
 } */
+

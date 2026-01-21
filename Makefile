@@ -9,7 +9,7 @@ SRC_FILES = data_order.c\
 		data_validation.c\
 		lst_function_2.c\
 		lst_function.c\
-		push_swap.c\
+		main.c\
 		pushes.c\
 		reverses.c\
 		rotates.c\

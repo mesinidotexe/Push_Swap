@@ -12,21 +12,83 @@
 
 #include "push_swap.h"
 
+int count_numbers(char **argv)
+{
+	int i;
+	int j;
+	int counter;
+
+	i = 1;
+	counter = 0;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]))
+			{
+				counter++;
+				while (ft_isdigit(argv[i][j]))
+				j++;
+			}
+			else
+				j++;
+		}
+		i++;
+	}
+	return (counter);
+}
+char **split_all(char **argv, char **splitted)
+{
+    int i;
+    int j;
+    int k;
+    char **tmp;
+
+    i = 1;
+    k = 0;
+    while (argv[i])
+    {
+        j = 0;
+        tmp = ft_split(argv[i], ' ');
+        if (!tmp)
+            return NULL;
+        while (tmp[j])
+        {
+            splitted[k] = ft_strdup(tmp[j]);
+            if (!splitted[k])
+            {
+                free_array(splitted);
+                free_array(tmp);
+                return NULL;
+            }
+            k++;
+            j++;
+        }
+        free_array(tmp);
+        i++;
+    }
+    splitted[k] = NULL;
+    return splitted;
+}
+
+
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
 	t_stack	*b;
-	int		i;
+	char **splitted;
 
-	i = 0;
-	while (i < argc)
-		if (!argv[i++][0])
-			error();
 	a = NULL;
 	b = NULL;
 	if (!check_data(argc, argv))
 		error();
-	a = arg_to_stack(a, argc, argv);
+	splitted = malloc(sizeof (char *) * (count_numbers(argv) + 1));
+	if (!splitted)
+		error();
+	splitted = split_all(argv, splitted);
+	a = arg_to_stack(a, splitted);
+	free_array(splitted);
 	if (!a)
 		error();
 	ps_print_stack(a);

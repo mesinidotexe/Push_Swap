@@ -25,13 +25,13 @@ int	inorder(t_stack *lista)
 	return (true);
 }
 
-t_stack	*arg_to_stack(t_stack *a, int argc, char *argv[])
+t_stack	*arg_to_stack(t_stack *a, char *argv[])
 {
 	t_stack	*new_node;
 	int		i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (argv[i])
 	{
 		new_node = ps_lstnew(ft_atoi(argv[i]));
 		if (!new_node)

@@ -39,7 +39,7 @@ void				error(void);
 
 // Data Order
 int					inorder(t_stack *Lista);
-t_stack				*arg_to_stack(t_stack *a, int argc, char *argv[]);
+t_stack				*arg_to_stack(t_stack *a, char *argv[]);
 
 // Lists/Stack
 void				ps_print_stack(t_stack *a);

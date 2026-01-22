@@ -12,6 +12,17 @@
 
 #include "push_swap.h"
 
+int empty_strings(int argc, char **argv)
+{
+	int i;
+
+	i = 0;
+	while (i < argc)
+		if (!argv[i++][0])
+			return (1);
+	return (0);
+}
+
 int	args_are_int(int argc, char *argv[])
 {
 	int	i;
@@ -76,8 +87,11 @@ int	has_duplicates(int argc, char **argv)
 	return (0);
 }
 
+
 int	check_data(int argc, char *argv[])
 {
+	if (empty_strings(argc, argv))
+		return (1);
 	if (!args_are_int(argc, argv))
 		return (1);
 	if (overflow(argc, argv))

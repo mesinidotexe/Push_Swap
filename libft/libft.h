@@ -76,6 +76,7 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+void				free_array(char **array);
 
 // fd's
 void				ft_putchar_fd(char c, int fd);

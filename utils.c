@@ -12,11 +12,6 @@
 
 #include "push_swap.h"
 
-// void	sort(t_stack *a, t_stack *b)
-// {
-
-// }
-
 void	error(void)
 {
 	write(2, "Error\n", 6);

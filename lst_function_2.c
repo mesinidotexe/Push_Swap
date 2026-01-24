@@ -35,3 +35,18 @@ void	ps_print_stack(t_stack *a)
 		a = a->next;
 	}
 }
+
+int	ps_lstsize(t_stack *lst)
+{
+	int	counter;
+
+	if (!lst)
+		return (0);
+	counter = 0;
+	while (lst)
+	{
+		counter++;
+		lst = lst->next;
+	}
+	return (counter);
+}

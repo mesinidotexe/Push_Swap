@@ -27,6 +27,11 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+// Args parsing
+int					count_numbers(char **argv);
+char				**split_all(char **argv, char **splitted);
+int					validate_splitted(char **splitted, char *prog_name);
+
 // Data validation
 int					check_data(int argc, char *argv[]);
 int					has_duplicates(int argc, char **argv);
@@ -35,7 +40,7 @@ int					args_are_int(int argc, char *argv[]);
 
 // Utils
 void				error(void);
-// void				sort(t_stack *a, t_stack *b);
+void				sorting(t_stack *a, t_stack *b);
 
 // Data Order
 int					inorder(t_stack *Lista);
@@ -50,5 +55,22 @@ void				ps_lstadd_back(t_stack **lst, t_stack *new);
 void				ps_lstadd_front(t_stack **lst, t_stack *new);
 t_stack				*ps_lstlast(t_stack *lst);
 void				ps_lstdelone(t_stack *lst);
+int					ps_lstsize(t_stack *lst);
+
+// Sorting
+void				sorting(t_stack *a, t_stack *b);
+
+// operations
+void				sa(t_stack *a);
+void				sb(t_stack *b);
+void				ss(t_stack *a, t_stack *b);
+void				pa(t_stack *a, t_stack *b);
+void				pb(t_stack *b, t_stack *a);
+void				ra(t_stack *a);
+void				rb(t_stack *b);
+void				rr(t_stack *a, t_stack *b);
+void				rra(t_stack *a);
+void				rrb(t_stack *b);
+void				rrr(t_stack *a, t_stack *b);
 
 #endif

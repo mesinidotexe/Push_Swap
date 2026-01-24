@@ -5,7 +5,8 @@ CFLAGS = -Wall -Wextra -Werror -I/libft -g
 
 SRCS_DIR = .
 
-SRC_FILES = data_order.c\
+SRC_FILES = args_parser.c\
+		data_order.c\
 		data_validation.c\
 		lst_function_2.c\
 		lst_function.c\
@@ -14,7 +15,8 @@ SRC_FILES = data_order.c\
 		reverses.c\
 		rotates.c\
 		swaps.c\
-		utils.c
+		utils.c\
+		sorting_few.c
 
 SRCS = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
 

@@ -37,6 +37,7 @@ int					check_data(int argc, char *argv[]);
 int					has_duplicates(int argc, char **argv);
 int					overflow(int argc, char *argv[]);
 int					args_are_int(int argc, char *argv[]);
+int					empty_strings(int argc, char **argv);
 
 // Utils
 void				error(void);

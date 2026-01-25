@@ -12,18 +12,12 @@
 
 #include "push_swap.h"
 
-void	rra(t_stack *Lista)
+void	rra(t_stack *lista)
 {
-	t_stack	*value_last_node;
-	t_stack	**ptr_first_node;
+	t_stack	*tmp;
 
-	ptr_first_node = &Lista;
-	value_last_node = ps_lstlast(Lista);
-	Lista = *ptr_first_node;
-	while (Lista)
-	{
-		*value_last_node = *Lista;
-		Lista = Lista->next;
-	}
+	tmp = lista;
+	lista = lista->next;
+	lista->next = tmp;
 	write(1, "rra\n", 4);
 }

@@ -16,10 +16,13 @@ int empty_strings(int argc, char **argv)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 	while (i < argc)
-		if (!argv[i++][0])
+	{
+		if (!argv[i][0])
 			return (1);
+		i++;
+	}
 	return (0);
 }
 
@@ -35,16 +38,16 @@ int	args_are_int(int argc, char *argv[])
 		if (argv[i][j] == '-' || argv[i][j] == '+')
 			j++;
 		if (!argv[i][j])
-			return (1);
+			return (0);
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]) && ft_isspace(argv[i][j]))
-				return (1);
+			if (!ft_isdigit(argv[i][j]))
+				return (0);
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	overflow(int argc, char *argv[])
@@ -91,12 +94,12 @@ int	has_duplicates(int argc, char **argv)
 int	check_data(int argc, char *argv[])
 {
 	if (empty_strings(argc, argv))
-		return (1);
+		return (0);
 	if (!args_are_int(argc, argv))
-		return (1);
+		return (0);
 	if (overflow(argc, argv))
-		return (1);
+		return (0);
 	if (has_duplicates(argc, argv))
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }

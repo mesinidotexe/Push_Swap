@@ -21,6 +21,8 @@ int	main(int argc, char *argv[])
 	(void)argc;
 	a = NULL;
 	b = NULL;
+	if (empty_strings(argc, argv))
+		error();
 	if (!(splitted = malloc(sizeof (char *) * (count_numbers(argv) + 1))))
 		error();
 	if (!(splitted = split_all(argv, splitted)))
@@ -31,15 +33,11 @@ int	main(int argc, char *argv[])
 		error();
 	}
 	if (!(a = arg_to_stack(a, splitted)))
-		error();
+		return (1);
 	free_array(splitted);
 	ps_print_stack(a);
-	if (inorder(a))
-	{
-		free_list(a, b);
-		return (0);
-	}
-	sorting(a, b);
+	if(!inorder(a))
+		sorting(a, b);
 	write(1, "\nsorted!\n", 9);
 	ps_print_stack(a);
 	free_list(a, b);

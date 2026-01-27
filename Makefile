@@ -16,7 +16,8 @@ SRC_FILES = args_parser.c\
 		rotates.c\
 		swaps.c\
 		utils.c\
-		sorting_few.c
+		sorting_few.c\
+		sorting_general.c
 
 SRCS = $(addprefix $(SRCS_DIR)/, $(SRC_FILES))
 

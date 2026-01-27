@@ -12,18 +12,28 @@
 
 #include "push_swap.h"
 
-void	pa(t_stack *listaA, t_stack *listaB)
+void	pa(t_stack **listaA, t_stack **listaB)
 {
-	if (!listaB)
+	t_stack	*temp;
+
+	if (!listaB || !*listaB)
 		return ;
-	ps_lstadd_front(&listaA, listaB);
+	temp = *listaB;
+	*listaB = (*listaB)->next;
+	temp->next = *listaA;
+	*listaA = temp;
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_stack *listaB, t_stack *listaA)
+void	pb(t_stack **listaB, t_stack **listaA)
 {
-	if (!listaA)
+	t_stack	*temp;
+
+	if (!listaA || !*listaA)
 		return ;
-	ps_lstadd_front(&listaB, listaA);
+	temp = *listaA;
+	*listaA = (*listaA)->next;
+	temp->next = *listaB;
+	*listaB = temp;
 	write(1, "pb\n", 3);
 }

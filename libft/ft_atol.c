@@ -32,8 +32,6 @@ long	ft_atol(char *str)
 		nbr = nbr * 10 + (*str - '0');
 		str++;
 	}
-	if (nbr < INT_MIN || nbr > INT_MAX)
-		exit(1);
 	if (neg % 2 != 0)
 		nbr = -nbr;
 	return (nbr);

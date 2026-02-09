@@ -16,7 +16,7 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*a;
 	t_stack	*b;
-	char **splitted;
+	char	**splitted;
 
 	(void)argc;
 	a = NULL;
@@ -28,15 +28,12 @@ int	main(int argc, char *argv[])
 	if (!(splitted = split_all(argv, splitted)))
 		error();
 	if (!validate_splitted(splitted, argv[0]))
-	{
-		free_array(splitted);
-		error();
-	}
+		return (free_array (splitted), error(), -1);
 	if (!(a = arg_to_stack(a, splitted)))
-		return (1);
+		return (error(), -1);
 	free_array(splitted);
 	ps_print_stack(a);
-	if(!inorder(a))
+	if (!inorder(a))
 		sorting(a, b);
 	write(1, "\nsorted!\n", 9);
 	ps_print_stack(a);

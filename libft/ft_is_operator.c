@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_general.c                                  :+:      :+:    :+:   */
+/*   ft_is_operator.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmesini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 15:12:43 by vmesini-          #+#    #+#             */
-/*   Updated: 2026/02/09 15:12:44 by vmesini-         ###   ########.fr       */
+/*   Created: 2026/02/09 15:11:57 by vmesini-          #+#    #+#             */
+/*   Updated: 2026/02/09 15:11:58 by vmesini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	general(t_stack **a, t_stack **b)
+int	ft_is_operator(char c)
 {
-	int	i;
-	int	size;
-
-	if (!a)
-		return ;
-	i = 0;
-	size = ps_lstsize(*a);
-	indexing(*a);
-	while (size > 0)
-	{
-		if (((*a)->index >> i) & 1)
-			ra(*a);
-		else
-			pb (b, a);
-		size--;
-		i++;
-	}
-	
-	while (pa(a, b))
-		;
-	
+	if (c == '-' || c == '+')
+		return (1);
+	return (0);
 }

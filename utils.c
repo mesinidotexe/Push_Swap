@@ -43,3 +43,24 @@ int	find_min_index(t_stack *stack)
 	}
 	return (min_index);
 }
+
+void	indexing(t_stack *a)
+{
+	t_stack	**current;
+	int		index;
+	int atual_index;
+
+	atual_index = find_min_index(a);
+	current = &a;
+	index = 0;
+	while (a)
+	{
+		a->index = -1;
+		a = a->next;
+	}
+	a = *current;
+	while (a)
+	{
+		
+	}
+}

@@ -17,7 +17,7 @@ void	general(t_stack **a, t_stack **b)
 	int	i;
 	int	size;
 
-	if (!a)
+	if (!a || !*a)
 		return ;
 	i = 0;
 	size = ps_lstsize(*a);
@@ -31,8 +31,6 @@ void	general(t_stack **a, t_stack **b)
 		size--;
 		i++;
 	}
-	
 	while (pa(a, b))
 		;
-	
 }

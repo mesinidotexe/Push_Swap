@@ -46,21 +46,22 @@ int	find_min_index(t_stack *stack)
 
 void	indexing(t_stack *a)
 {
-	t_stack	**current;
+	t_stack	*current;
+	t_stack	*runner;
 	int		index;
-	int atual_index;
 
-	atual_index = find_min_index(a);
-	current = &a;
-	index = 0;
-	while (a)
+	current = a;
+	while (current)
 	{
-		a->index = -1;
-		a = a->next;
-	}
-	a = *current;
-	while (a)
-	{
-		
+		index = 0;
+		runner = a;
+		while (runner)
+		{
+			if (runner->number < current->number)
+				index++;
+			runner = runner->next;
+		}
+		current->index = index;
+		current = current->next;
 	}
 }

@@ -33,13 +33,13 @@ void	general(t_stack **a, t_stack **b)
 
 	if (!a || !*a)
 		return ;
-	size = ps_lstsize(*a);
 	i = 0;
 	indexing(*a);
-	bits = bits_needed((*a)->index);
+	bits = bits_needed((*a)->index - 1);
 	while (bits > 0)
 	{
-		while (size > 0)
+		size = ps_lstsize(*a);
+			while (size > 0)
 		{
 			if (((*a)->index >> i) & 1)
 				ra(*a);

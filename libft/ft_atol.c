@@ -30,6 +30,8 @@ long	ft_atol(char *str)
 	while (*str >= 48 && *str <= 57)
 	{
 		nbr = nbr * 10 + (*str - '0');
+		if (nbr > INT_MAX)
+			return ((long)(INT_MAX) + 1);
 		str++;
 	}
 	if (neg % 2 != 0)

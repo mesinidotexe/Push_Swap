@@ -35,11 +35,11 @@ void	general(t_stack **a, t_stack **b)
 		return ;
 	i = 0;
 	indexing(*a);
-	bits = bits_needed((*a)->index - 1);
+	bits = bits_needed(find_max_index(*a));
 	while (bits > 0)
 	{
 		size = ps_lstsize(*a);
-			while (size > 0)
+		while (size > 0)
 		{
 			if (((*a)->index >> i) & 1)
 				ra(*a);

@@ -43,6 +43,7 @@ int					empty_strings(int argc, char **argv);
 // Utils
 void				error(void);
 int					find_min_index(t_stack *stack);
+int					find_max_index(t_stack *a);
 void				indexing(t_stack *a);
 
 // Data Order

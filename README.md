@@ -2,9 +2,6 @@
 
 # push_swap
 
-# TO TEST 
-# var=$(echo $(seq 0 99 | shuf)) && ./push_swap $var
-
 ## Description
 
 **push_swap** is a sorting algorithm project from the 42 curriculum.  
@@ -73,3 +70,42 @@ This ensures efficient sorting within the movement limits required by the projec
 
 ```bash
 make
+```
+
+This will build the `push_swap` executable (and the `libft` dependency if needed).
+
+### Execution
+
+```bash
+./push_swap <numbers>
+```
+
+Pass a list of integers as arguments. The program will output a sequence of operations that sorts them in ascending order.
+
+**Examples:**
+
+```bash
+./push_swap 2 1 3
+./push_swap 4 2 5 1 3
+```
+
+**Test with random input (100 numbers):**
+
+```bash
+var=$(seq 0 99 | shuf) && ./push_swap $var
+```
+
+---
+
+## Resources
+
+### References
+
+- [42 push_swap Subject](https://cdn.intra.42.fr/pdf/pdf/96035/en.subject.pdf) — Official project PDF
+- [Radix Sort (Wikipedia)](https://en.wikipedia.org/wiki/Radix_sort) — Bitwise radix sort for stack-based sorting
+- [Sorting algorithms](https://en.wikipedia.org/wiki/Sorting_algorithm) — General overview of sorting strategies
+- [42 push_swap Guide](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a) — Tutorial on optimization strategies
+
+### AI Usage
+
+AI was used to help find possible ways and logics throughout the program, inplement fuctions, code review, understanding the use of Radix sorting algorithm and writing this README
